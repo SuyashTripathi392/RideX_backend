@@ -156,7 +156,6 @@ export const sendResetPassword = async (req, res) => {
     return res.json({
       success: true,
       message: "Reset password link sent to your email",
-      link: "http://localhost:8000/api/auth/update-password"
     });
   } catch (error) {
     return res.json({
