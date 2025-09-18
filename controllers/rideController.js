@@ -330,7 +330,7 @@ export const getUserRides = async (req, res) => {
       .from("rides")
       .select("*")
       .eq("rider_id", rider_id)
-      .in("status", ["pending_payment", "requested", "accepted", "in_progress"])
+      .in("status", [ "requested", "accepted", "in_progress"])
       .order("created_at", { ascending: false });
 
     if (ongoingError) throw ongoingError;
