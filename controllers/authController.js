@@ -99,7 +99,7 @@ export const getProfile = async (req, res) => {
     // Users ya drivers dono me check karo
     let { data, error } = await supabase
       .from("users")
-      .select("id, email, name, role, is_active,phone,created_at")
+      .select("*")
       .eq("id", userId)
       .single();
 
@@ -107,7 +107,7 @@ export const getProfile = async (req, res) => {
       // Users me nahi mila, drivers table check karo
       const driverRes = await supabase
         .from("drivers")
-        .select("id, email, name, role, is_active,phone,created_at")
+        .select("*")
         .eq("id", userId)
         .single();
       data = driverRes.data;
